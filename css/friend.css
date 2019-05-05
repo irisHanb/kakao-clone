@@ -47,9 +47,6 @@
   font-size: 12px;
 }
 
-.friend .chat__timestamp {
-}
-
 .friend .friend__now-listening {
   /* background-color: red; */
   padding: 5px 10px;
@@ -61,6 +58,7 @@
 .friend__now-listening span {
   opacity: 0.7;
 }
+
 .friend__now-listening i {
   font-size: 12px;
 }
