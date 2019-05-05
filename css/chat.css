@@ -1,5 +1,16 @@
+.header-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+}
+
 .chats-body {
-  padding: 0;
+  padding: 10px 0;
+  padding-top: 100px;
+  background-image: url("../images/chat-bg.png");
+  min-height: 1000vh;
 }
 
 .chats-body .header,
@@ -8,8 +19,8 @@
 }
 
 .chat-screen {
-  background-image: url("../images/chat-bg.png");
-  min-height: 100vh;
+  /* background-image: url("../images/chat-bg.png");
+  min-height: 100vh; */
 }
 
 .chat__write {
