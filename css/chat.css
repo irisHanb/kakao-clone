@@ -20,10 +20,6 @@
   padding: 0 20px;
 }
 
-.chat-screen {
-  /* background-image: url("../images/chat-bg.png");
-  min-height: 100vh; */
-}
 
 .chat__write {
   position: fixed;
@@ -46,6 +42,84 @@
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
+
+.chat__write--container {
+  width: 100%;
+  height: 56px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  padding: 0 20px;
+
+  overflow: hidden;
+}
+
+.chat__write {
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
+  padding: 20px 60px;
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out, box-shadow 0.5s ease-in-out, border-radius 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+
+}
+
+@keyframes float {
+  0% {
+
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+
+  50% {
+
+    box-shadow: 0 30px 60px -100px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+
+  100% {
+
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  }
+}
+
+.chat__write:focus {
+  outline: none;
+  width: 80%;
+  transform: translateY(-100px);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  animation: float 3s linear infinite forwards;
+}
+
+.chat__write:focus~.chat__icon {
+  opacity: 0;
+}
+
+.chat__icon {
+  position: absolute;
+  font-size: 18px;
+  transition: opacity .3s ease-in-out;
+}
+
+.chat__icon-right {
+  right: 10px;
+}
+
 
 .chat__write i {
   font-size: 22px;
@@ -137,4 +211,37 @@
 .sent-message .message__bubble {
   border-bottom-right-radius: 0;
   background-image: linear-gradient(to left, #00B4DB, #0083B0);
+}
+
+
+@keyframes incommingAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.incomming-message {
+  animation: incommingAnim .5s ease-out forwards;
+}
+
+@keyframes sentAnim {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.sent-message {
+  animation: sentAnim .5s ease-out forwards;
 }
